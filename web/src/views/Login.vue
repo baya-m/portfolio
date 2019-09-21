@@ -1,8 +1,8 @@
 <template>
   <div>
     <h1>ログイン</h1>
-    <lable for="email">Email:</lable>
-    <input id="email" placeholder="email" type="text" v-model="email" />
+    <lable for="id">Id:</lable>
+    <input id="id" placeholder="id" type="text" v-model="id" />
     <br />
     <label for="password">Password:</label>
     <input id="password" placeholder="password" type="text" v-model="password" />
@@ -16,7 +16,7 @@
 export default {
   data() {
     return {
-      email: "",
+      id: "",
       password: ""
     };
   }
