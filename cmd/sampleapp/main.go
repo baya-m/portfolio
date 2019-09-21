@@ -1,9 +1,9 @@
 package main
 
 import (
-	"config"
 	"fmt"
-	"server/utils"
+	"git/portfolio/server/config"
+	"git/portfolio/server/utils"
 )
 
 func main() {
