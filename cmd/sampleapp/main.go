@@ -2,11 +2,13 @@ package main
 
 import (
 	"fmt"
-	"git/portfolio/server/config"
-	"git/portfolio/server/utils"
+
+	config "github.com/portfolio/pkg/configs"
+
+	"github.com/portfolio/pkg/utils"
 )
 
 func main() {
-	fmt.Printf("Hello")
+	fmt.Printf("%v", config.Config.Port)
 	utils.LoggingSetting(config.Config.LogFile)
 }

@@ -1,6 +1,7 @@
 package config
 
 import (
+	"fmt"
 	"log"
 
 	"gopkg.in/ini.v1"
@@ -22,4 +23,6 @@ func init() {
 		LogFile: cfg.Section("server").Key("log_file").String(),
 		Port:    cfg.Section("web").Key("port").MustInt(),
 	}
+	fmt.Printf("%v", Config.Port)
+	fmt.Printf("%v", Config.LogFile)
 }
