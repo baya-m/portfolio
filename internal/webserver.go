@@ -6,7 +6,7 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/portfolio/internal/interfaces/api"
-	config "github.com/portfolio/pkg/configs"
+	"github.com/portfolio/pkg/config"
 )
 
 func StartWebServer() error {
