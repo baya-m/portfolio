@@ -12,6 +12,6 @@ import (
 func StartWebServer() error {
 	router := mux.NewRouter()
 	router.HandleFunc("/api/login", api.LoginHandler).Methods("POST")
-	// router.HandleFunc("/api/signup", api.SignupHandler).Methods("POST")
+	router.HandleFunc("/api/signup", api.SignupHandler).Methods("POST")
 	return http.ListenAndServe(fmt.Sprintf(":%d", config.Config.Port), router)
 }

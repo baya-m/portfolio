@@ -4,22 +4,25 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/gorilla/mux"
+	"fmt"
+
 	"github.com/portfolio/internal/domain/model"
 	"github.com/portfolio/internal/usecase"
 )
 
 func SignupHandler(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
 	var signup model.Signup
-	if vars["id"] == "" {
+	fmt.Println("次がBody")
+	fmt.Println(r.Body)
+	json.NewDecoder(r.Body).Decode(&signup)
+
+	if signup.ID == "" {
 		APIError(w, "No id param", http.StatusBadRequest)
 		return
 	}
-	if vars["password"] == "" {
-		APIError(w, "No id password", http.StatusBadRequest)
+	if signup.Password == "" {
+		APIError(w, "No password param", http.StatusBadRequest)
 		return
 	}
-	json.NewDecoder(r.Body).Decode(&signup)
 	usecase.SignupUsecase{}.Create(signup)
 }

@@ -9,7 +9,7 @@ type SignupPersistence struct{}
 
 /* Create  signup */
 func (signupPersistence SignupPersistence) Create(signup model.Signup) error {
-	_, err := infra.DbConnection.Exec("INSERT INTO LOGIN VALUES ('?','?')", signup.Id, signup.Password)
+	_, err := infra.DbConnection.Exec("INSERT INTO LOGIN VALUES ('?','?')", signup.ID, signup.Password)
 	if err != nil {
 		return err
 	}
