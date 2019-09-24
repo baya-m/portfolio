@@ -6,7 +6,7 @@ import (
 
 type SignupPersistence struct{}
 
-/* Create  signup */
+/* Create Signup */
 func (signupPersistence SignupPersistence) Create(signup model.Signup) error {
 	ins, err := DbConnection.Prepare("INSERT INTO login(login_id, password) VALUES (?, ?)")
 	if err != nil {

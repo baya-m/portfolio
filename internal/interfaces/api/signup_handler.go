@@ -28,8 +28,8 @@ func SignupHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	err := usecase.SignupUsecase{}.Create(signup)
 	if err != nil {
-		log.Fatal("Error Reason %v", err)
+		log.Fatalf("Error Reason %v", err)
 		APIError(w, "failed to Create ID", http.StatusInternalServerError)
 	}
-	APICreated(w, fmt.Sprintf("Account Created"), http.StatusAccepted)
+	APICreated(w, fmt.Sprintf("Account Created"), http.StatusCreated)
 }
