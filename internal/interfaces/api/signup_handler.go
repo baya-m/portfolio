@@ -6,6 +6,8 @@ import (
 
 	"fmt"
 
+	"log"
+
 	"github.com/portfolio/internal/domain/model"
 	"github.com/portfolio/internal/usecase"
 )
@@ -16,13 +18,18 @@ func SignupHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Println(r.Body)
 	json.NewDecoder(r.Body).Decode(&signup)
 
-	if signup.ID == "" {
-		APIError(w, "No id param", http.StatusBadRequest)
+	if signup.LoginID == "" {
+		APIError(w, "No login_id param", http.StatusBadRequest)
 		return
 	}
 	if signup.Password == "" {
 		APIError(w, "No password param", http.StatusBadRequest)
 		return
 	}
-	usecase.SignupUsecase{}.Create(signup)
+	err := usecase.SignupUsecase{}.Create(signup)
+	if err != nil {
+		log.Fatal("Error Reason %v", err)
+		APIError(w, "failed to Create ID", http.StatusInternalServerError)
+	}
+	APICreated(w, fmt.Sprintf("Account Created"), http.StatusAccepted)
 }

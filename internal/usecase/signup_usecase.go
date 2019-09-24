@@ -9,7 +9,6 @@ import (
 type SignupUsecase struct{}
 
 func (signUsecase SignupUsecase) Create(signup model.Signup) error {
-	var err error
-	err = repository.SignupRepository(persistence.SignupPersistence{}).Create(signup)
+	err := repository.SignupRepository(persistence.SignupPersistence{}).Create(signup)
 	return err
 }

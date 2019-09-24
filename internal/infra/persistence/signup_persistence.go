@@ -2,14 +2,17 @@ package persistence
 
 import (
 	"github.com/portfolio/internal/domain/model"
-	"github.com/portfolio/internal/infra"
 )
 
 type SignupPersistence struct{}
 
 /* Create  signup */
 func (signupPersistence SignupPersistence) Create(signup model.Signup) error {
-	_, err := infra.DbConnection.Exec("INSERT INTO LOGIN VALUES ('?','?')", signup.ID, signup.Password)
+	ins, err := DbConnection.Prepare("INSERT INTO login(login_id, password) VALUES (?, ?)")
+	if err != nil {
+		return err
+	}
+	_, err = ins.Exec(signup.LoginID, signup.Password)
 	if err != nil {
 		return err
 	}

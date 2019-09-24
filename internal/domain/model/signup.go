@@ -1,6 +1,6 @@
 package model
 
 type Signup struct {
-	ID       string `json:"id"`
+	LoginID  string `json:"id"`
 	Password string `json:"password"`
 }
