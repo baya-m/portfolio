@@ -13,14 +13,28 @@
 </template>
 
 <script>
+import axios from "axios"
 export default {
   data() {
     return {
       id: "",
       password: ""
     };
+  },
+    methods: {
+    login() {
+      axios
+        .post("/api/login", {
+          id: this.id,
+          password: this.password
+        })
+        .then(respose => {
+          console.log(respose);
+        });
+    }
   }
 };
+
 </script>
 
 <style>

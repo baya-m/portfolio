@@ -10,6 +10,12 @@ import (
 
 var DbConnection *sql.DB
 
+type TrashScanner struct{}
+
+func (TrashScanner) Scan(interface{}) error {
+	return nil
+}
+
 func init() {
 	log.Println("start load db")
 	var err error

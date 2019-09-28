@@ -4,8 +4,6 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"fmt"
-
 	"log"
 
 	"github.com/portfolio/internal/domain/model"
@@ -14,8 +12,10 @@ import (
 
 func SignupHandler(w http.ResponseWriter, r *http.Request) {
 	var signup model.Signup
-	fmt.Println("次がBody")
-	fmt.Println(r.Body)
+	w.Header().Set("content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Request-Method", "POST")
+
 	json.NewDecoder(r.Body).Decode(&signup)
 
 	if signup.LoginID == "" {
@@ -28,8 +28,9 @@ func SignupHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	err := usecase.SignupUsecase{}.Create(signup)
 	if err != nil {
-		log.Fatalf("Error Reason %v", err)
+		log.Printf("Error Reason %v", err)
 		APIError(w, "failed to Create ID", http.StatusInternalServerError)
+		return
 	}
-	APICreated(w, fmt.Sprintf("Account Created"), http.StatusCreated)
+	APICreated(w, "Account Created", http.StatusCreated)
 }

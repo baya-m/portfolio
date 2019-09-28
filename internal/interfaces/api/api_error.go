@@ -16,7 +16,7 @@ func APIError(w http.ResponseWriter, errMessage string, code int) {
 	w.WriteHeader(code)
 	jsonError, err := json.Marshal(JSONError{Error: errMessage, Code: code})
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 	w.Write(jsonError)
 }

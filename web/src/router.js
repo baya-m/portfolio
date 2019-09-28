@@ -44,6 +44,9 @@ export default new Router({
       components: {
         default: Signup,
         header: Header
+      },
+      meta: {
+        isPublic: true
       }
     },
     {
