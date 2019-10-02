@@ -5,7 +5,7 @@ import (
 	"log"
 
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/portfolio/pkg/config"
+	"github.com/portfolio/config"
 )
 
 var DbConnection *sql.DB

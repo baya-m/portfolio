@@ -20,7 +20,6 @@ export default new Vuex.Store({
             localStorage.setItem("jwt", JSON.stringify(idToken))
             state.loggedIn = true
         }
- 
     },
     actions: {
         login({commit}, auth){

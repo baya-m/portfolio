@@ -26,22 +26,27 @@ https://github.com/golang-standards/project-layout
 
 root/  
  |  
- ├cmd/app main.go 配置 ini,logファイルもあります。  
- ├internal 本プロセスのみで使用するファイルのみ配置。  
+├cmd/app main.go 配置 ini,logファイルもあります。  
+├internal 本プロセスのみで使用するファイルのみ配置。  
  |  　     └domain ドメイン層 model, repositoryを管理  
  |  　     ├infra インフラ層　DB周り  
  |  　     ├interfaces api周り  
  |   　    ├usecase サービス層  
  ├pkg 他プロセスでも共通で使用するであろうファイルを配置 (config, utilなど)  
  ├web フロント周り  
- 
+
  ## やってきたこと, 苦戦したこと
  - udemyにてGo, Vueの勉強 8月~9月にかけて
  - GoにてAPIサーバーを作る 
- 　- サーバーをlocalhostで立ち上げる。 9/12
-  勉強した内容をもとに作成したので楽に立ち上げた
+
+      - サーバーをlocalhostで立ち上げる。 9月半ば
+        勉強した内容をもとに作成したので楽に立ち上げる事ができた。
+
+      - ディレクトリ構成を変更 9月半ば
+
+        今回はフレームワークを使わない方針であったため、どのようなディレクトリ構成にするか迷ったがGo独自のディレクトリ構成で
+
   
+
   
-  
-  
-  
+

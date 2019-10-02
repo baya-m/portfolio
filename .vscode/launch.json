@@ -9,7 +9,7 @@
             "type": "go",
             "request": "launch",
             "mode": "auto",
-            "program": "/Users/masashi/go/src/github.com/portfolio/cmd/sampleapp/main.go",
+            "program": "/Users/masashi/go/src/github.com/portfolio/cmd/app/main.go",
             "env": {},
             "args": [],
         }

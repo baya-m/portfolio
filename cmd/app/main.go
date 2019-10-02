@@ -5,7 +5,7 @@ import (
 	"github.com/portfolio/internal"
 
 	_ "github.com/portfolio/internal/infra/persistence"
-	"github.com/portfolio/pkg/config"
+	"github.com/portfolio/config"
 	"github.com/portfolio/pkg/utils"
 )
 
