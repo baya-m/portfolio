@@ -22,8 +22,8 @@ Vuex, VueRouterを用いています。
 SPAで完成することを目標としています。
 
 - Go
-以下のURLを参考にディレクトリを構成しています。
-https://github.com/golang-standards/project-layout
+以下のURLを参考にディレクトリを構成しています。  
+https://github.com/golang-standards/project-layout  
 機能周りはClean Architectureを参考にディレクトリを構成しています。
 
 root/  
