@@ -6,8 +6,6 @@ import (
 
 	"encoding/json"
 
-	"fmt"
-
 	"github.com/portfolio/internal/domain/model"
 	"github.com/portfolio/internal/usecase"
 	"golang.org/x/crypto/bcrypt"
@@ -28,9 +26,6 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	password := login.Password
-	fmt.Println(password)
-
 	//ユーザー情報をDBから取得
 	result, err := usecase.LoginUsecase{}.Select(login)
 	if err != nil {
@@ -38,26 +33,24 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 		APIError(w, "failed to login", http.StatusInternalServerError)
 		return
 	}
-	hassdPassword, err := bcrypt.GenerateFromPassword([]byte(result.Password), 10)
-
 	if err != nil {
 		log.Printf("Error Reason %v", err)
 		APIError(w, "failed to login", http.StatusInternalServerError)
 		return
 	}
 
-	err = bcrypt.CompareHashAndPassword([]byte(hassdPassword), []byte(password))
+	err = bcrypt.CompareHashAndPassword([]byte(result.Password), []byte(login.Password))
 
 	if err != nil {
 		log.Printf("Error Reason %v", err)
 		APIError(w, "Invalid password", http.StatusBadRequest)
 		return
 	}
-	tokenString, err := usecase.CreateToken{}.Create(login)
+	tokenString, err := usecase.CryptUsecase{}.CreateToken(login)
 	if err != nil {
 		log.Printf("Failed to Create Token")
 		APIError(w, "failed to Create Token", http.StatusInternalServerError)
 		return
 	}
-	APICreated(w, tokenString, http.StatusCreated)
+	APITokenCreated(w, tokenString, http.StatusCreated)
 }

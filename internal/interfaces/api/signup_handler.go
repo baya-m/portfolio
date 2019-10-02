@@ -26,11 +26,22 @@ func SignupHandler(w http.ResponseWriter, r *http.Request) {
 		APIError(w, "No password param", http.StatusBadRequest)
 		return
 	}
-	err := usecase.SignupUsecase{}.Create(signup)
+	hash, err := usecase.CryptUsecase{}.HashPassword(signup)
 	if err != nil {
 		log.Printf("Error Reason %v", err)
 		APIError(w, "failed to Create ID", http.StatusInternalServerError)
 		return
 	}
-	APICreated(w, "Account Created", http.StatusCreated)
+
+	signup.Password = string(hash)
+	err = usecase.SignupUsecase{}.Create(signup)
+
+	if err != nil {
+		log.Printf("Error Reason %v", err)
+		APIError(w, "failed to Create ID", http.StatusInternalServerError)
+		return
+	}
+
+	APIMessageCreated(w, "Account Created", http.StatusCreated)
+	log.Printf("Account Created LoginID : %v", signup.LoginID)
 }
