@@ -7,6 +7,10 @@ const User = () => import("./views/User.vue");
 const Login = () => import("./views/Login.vue");
 const Logout = () => import("./views/Logout.vue");
 const Signup = () => import("./views/Signup.vue");
+const Main = () => import("./views/Main.vue");
+const HeaderMain = () => import("./views/HeaderMain.vue");
+const SidebarMain = () => import("./views/SidebarMain.vue");
+
 
 Vue.use(Router);
 
@@ -27,6 +31,7 @@ export default new Router({
       path: "/login",
       components: {
         default: Login,
+        header: Header,
       },
       meta: {
         isPublic: true
@@ -54,6 +59,14 @@ export default new Router({
       components: {
         default: User,
         header: Header
+      }
+    },
+    {
+      path: "/main",
+      components: {
+        default: Main,
+        header: HeaderMain,
+        sidebar: SidebarMain
       }
     }
   ]
