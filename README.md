@@ -46,7 +46,8 @@ root/
 
       - ディレクトリ構成を変更 9月半ば
 
-        今回はフレームワークを使わない方針であったため、どのようなディレクトリ構成にするか迷ったが、Go独自のディレクトリ構成でgithub starが多いこともありhttps://github.com/golang-standards/project-layoutを採用
+        今回はフレームワークを使わない方針であったため、どのようなディレクトリ構成にするか迷ったが、Go独自のディレクトリ構成でgithub starが多いこともあり、  
+        https://github.com/golang-standards/project-layout　を採用
 
       - Clean Architectureを参考に、各機能のディレクトリ構成を変更 9月半ば
 
