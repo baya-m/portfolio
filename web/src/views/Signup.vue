@@ -1,15 +1,30 @@
 <template>
-  <div>
-    <h1>サインアップ</h1>
-    <lable for="id">Id:</lable>
-    <input id="id" placeholder="id" type="text" v-model="id" />
-    <br />
-    <label for="password">Password:</label>
-    <input id="password" placeholder="password" type="text" v-model="password" />
-    <button @click="signup">サインアップ</button>
-    <hr />
-    <router-link to="/">もどる</router-link>
+<div>
+  <b-card-group deck class="my-5">
+    <b-card 
+    bg-variant="light" 
+    header="Create a new Account !!"
+    align="center"
+    style="max-width: 30rem;"
+    class="mx-auto"
+    >
+    <b-card-header class="text-left bg-transparent">
+      Input your ID & password
+    </b-card-header>
+    <b-card-text class="text-left my-2">
+        <div>
+        <input class="input form-control" type="text" placeholder="id" v-model="id" />
+        </div>
+        <div class="my-2">
+        <input class="form-control" name="password" type="password" placeholder="password" v-model="password" />
+        </div>
+    </b-card-text>
+            <button class="btn btn-success btn-block">Signup</button>
+    </b-card>
+  </b-card-group>
+
   </div>
+
 </template>
 
 <script>
@@ -28,9 +43,6 @@ export default {
           id: this.id,
           password: this.password
         })
-        .then(respose => {
-          console.log(respose);
-        });
     }
   }
 };

@@ -2,14 +2,14 @@ import Vue from "vue";
 import Router from "vue-router";
 
 const Home = () => import("./views/Home.vue");
-const Header = () => import("./views/Header.vue");
+const Header = () => import("./components/Header.vue");
 const User = () => import("./views/User.vue");
 const Login = () => import("./views/Login.vue");
 const Logout = () => import("./views/Logout.vue");
 const Signup = () => import("./views/Signup.vue");
 const Main = () => import("./views/Main.vue");
-const HeaderMain = () => import("./views/HeaderMain.vue");
-const SidebarMain = () => import("./views/SidebarMain.vue");
+const HeaderMain = () => import("./components/HeaderMain.vue");
+const SidebarMain = () => import("./components/SidebarMain.vue");
 
 
 Vue.use(Router);
