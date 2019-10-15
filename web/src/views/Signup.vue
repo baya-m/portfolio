@@ -1,48 +1,43 @@
 <template>
-<div>
-  <b-card-group deck class="my-5">
-    <b-card 
-    bg-variant="light" 
-    header="Create a new Account !!"
-    align="center"
-    style="max-width: 30rem;"
-    class="mx-auto"
-    >
-    <b-card-header class="text-left bg-transparent">
-      Input your ID & password
-    </b-card-header>
-    <b-card-text class="text-left my-2">
-        <div>
-        <input class="input form-control" type="text" placeholder="id" v-model="id" />
-        </div>
-        <div class="my-2">
-        <input class="form-control" name="password" type="password" placeholder="password" v-model="password" />
-        </div>
-    </b-card-text>
-            <button class="btn btn-success btn-block">Signup</button>
-    </b-card>
-  </b-card-group>
-
+  <div>
+    <b-card-group deck class="my-5">
+      <b-card
+        bg-variant="light"
+        header="Create a new Account !!"
+        align="center"
+        style="max-width: 30rem;"
+        class="mx-auto"
+      >
+        <b-card-text class="my-2">
+          <SignupForm />
+        </b-card-text>
+      </b-card>
+    </b-card-group>
   </div>
-
 </template>
 
 <script>
 import axios from "axios";
+import SignupForm from "../components/SignupForm";
+
 export default {
+  components: {
+    SignupForm
+  },
   data() {
     return {
-      id: "",
+      username: "",
+      email: "",
       password: ""
     };
   },
   methods: {
     signup() {
-      axios
-        .post("/api/signup", {
-          id: this.id,
-          password: this.password
-        })
+      axios.post("/api/signup", {
+        username: this.username,
+        email: this.id,
+        password: this.password
+      });
     }
   }
 };

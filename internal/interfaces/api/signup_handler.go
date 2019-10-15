@@ -18,6 +18,8 @@ func SignupHandler(w http.ResponseWriter, r *http.Request) {
 
 	json.NewDecoder(r.Body).Decode(&signup)
 
+	if 
+
 	if signup.LoginID == "" {
 		APIError(w, "No login_id param", http.StatusBadRequest)
 		return
