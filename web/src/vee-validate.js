@@ -1,4 +1,4 @@
-import { required, confirmed, length, email } from "vee-validate/dist/rules";
+import { required, email, confirmed, min, max, alpha_num } from "vee-validate/dist/rules";
 import { extend } from "vee-validate";
 
 extend("required", {
@@ -16,7 +16,17 @@ extend("confirmed", {
   message: "This field confirmation does not match"
 });
 
-extend("length", {
-  ...length,
-  message: "This field must have 2 options"
+extend("min", {
+  ...min,
+  message: "{_field_} must be at least {length} characters"
 });
+
+extend("max", {
+    ...max,
+    message: "{_field_} must be at least {length} characters"
+});
+
+extend("alpha_num", {
+    ...alpha_num,
+    message: "{_field_} field may only contain alpha-num characters"
+})

@@ -1,33 +1,30 @@
 <template>
-<div>
-  <b-card-group deck class="my-5">
-    <b-card 
-    bg-variant="dark" 
-    header="Welcome to My Portfolio!"
-    align="center"
-    text-variant="white"
-    header-border-variant="white"
-    style="max-width: 30rem;"
-    class="mx-auto"
-    >
-    <b-card-text>
-        <input class="input form-control" type="text" placeholder="test@test.com" v-model="id" />
-        <div class="my-2">
-        <input class="form-control" type="password" placeholder="password" v-model="password" />
-        </div>
-    </b-card-text>
-            <button class="btn btn-success btn-block">Login</button>
-    </b-card>
-  </b-card-group>
-  <div class="text-center mt-n4">
-    <router-link to="signup">
-      Create New Account
-      </router-link>
+  <div>
+    <b-card-group deck class="my-5">
+      <b-card
+        bg-variant="dark"
+        header="Welcome to My Portfolio!"
+        align="center"
+        text-variant="white"
+        header-border-variant="white"
+        style="max-width: 30rem;"
+        class="mx-auto"
+      >
+        <b-card-text>
+          <input class="input form-control" type="text" placeholder="test@test.com" v-model="id" />
+          <div class="my-2">
+            <input class="form-control" type="password" placeholder="password" v-model="password" />
+          </div>
+        </b-card-text>
+        <button class="btn btn-success btn-block">Login</button>
+      </b-card>
+    </b-card-group>
+    <div class="text-center mt-n4">
+      <router-link to="signup">Create New Account</router-link>
+    </div>
   </div>
-</div>
 
-
-<!-- 
+  <!-- 
   <form action>
     <h3 class="card-header bg-transparent font-weight-bold">Login</h3>
     <div class="card-body mx-auto col-sm-8 col-xs-12">
@@ -48,7 +45,7 @@
       </div>
       
     </div>
-  </form> -->
+  </form>-->
 </template>
 
 <script>
