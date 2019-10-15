@@ -67,6 +67,9 @@ export default new Router({
         default: Main,
         header: HeaderMain,
         sidebar: SidebarMain
+      },
+      meta: {
+        isPublic: true
       }
     }
   ]
