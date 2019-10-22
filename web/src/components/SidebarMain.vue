@@ -1,17 +1,16 @@
 <template>
-<div>  
-    <hr>
-  <h1>Sidebarです</h1>
-  </div>
+<div>
 
+
+</div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style>
+logo img{
 
+}
 </style>
