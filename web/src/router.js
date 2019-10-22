@@ -65,8 +65,8 @@ export default new Router({
       path: "/main",
       components: {
         default: Main,
-        header: HeaderMain,
-        sidebar: SidebarMain
+       header: HeaderMain,
+       sidebar: SidebarMain
       },
       meta: {
         isPublic: true

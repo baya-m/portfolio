@@ -9,8 +9,11 @@ import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import "./vee-validate";
+import VueSidebarMenu from 'vue-sidebar-menu'
+import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
 
 Vue.use(BootstrapVue)
+Vue.use(VueSidebarMenu)
 
 new Vue({
   router,

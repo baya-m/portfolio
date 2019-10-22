@@ -1,8 +1,9 @@
 <template>
-<div>
-    <h1>This is Main.vue</h1>
-    <router-link to="/">もどる</router-link>
-</div>
+<b-container fluid class="text-light">
+  <b-row>
+    <b-col cols="3" class="mr-auto bg-info">cols="auto" .mr-auto</b-col>
+  </b-row>
+</b-container>
 </template>
 
 <script>
