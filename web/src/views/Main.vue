@@ -1,15 +1,17 @@
 <template>
-<b-container fluid class="text-light">
-  <b-row>
-    <b-col cols="3" class="mr-auto bg-info">cols="auto" .mr-auto</b-col>
-  </b-row>
-</b-container>
+  <b-container fluid class="text-light text-center">
+    <b-row>
+      <b-col cols="2" class="mr-auto">
+        <h1>
+          <font-awesome-icon icon="cog" size="2x" :style="{ color: 'black' }"/>
+        </h1>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
-export default {
-    
-};
+export default {};
 </script>
 
 <style>
